@@ -1,0 +1,125 @@
+/* src/pages/Login.css */
+
+/* Use a more thematic background */
+.auth-bg {
+  min-height: 100vh;
+  width: 100%;
+  background: 
+    linear-gradient(135deg, rgba(0, 10, 5, 0.9) 0%, rgba(5, 25, 15, 0.8) 100%), /* A deep green-black gradient */
+    url('https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3') center/cover; /* A placeholder for a satellite field image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif; /* Add a custom font */
+}
+
+.login-card {
+  background: rgba(26, 26, 26, 0.85); /* Slightly transparent for depth */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  padding: 40px 35px;
+  border-radius: 14px;
+  border: 1px solid rgba(76, 175, 80, 0.2); /* Subtle green border */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-card h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f5f5f5;
+  margin-bottom: 25px;
+  /* Add a small underline for flair */
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(90deg, transparent, #4caf50, transparent) 1;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 14px 16px; /* Slightly more padding */
+  margin-bottom: 18px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease; /* Transition all properties */
+  box-sizing: border-box;
+}
+
+.login-card input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2); /* A green glow */
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px; /* Consistent padding with input */
+  margin-top: 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #4caf50, #45a049); /* A subtle gradient */
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background: linear-gradient(135deg, #45a049, #4caf50);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4); /* Green shadow on hover */
+}
+
+.google-button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border: 1px solid #444; /* Add a border */
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  background: #ffffff;
+  color: #222;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.google-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.google-button:hover {
+  background: #f0f0f0;
+  border-color: #888;
+  transform: translateY(-2px);
+}
+
+.signup-text {
+  margin-top: 25px;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.signup-link {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.signup-link:hover {
+  color: #66bb6a; /* A lighter green */
+  text-decoration: underline;
+}

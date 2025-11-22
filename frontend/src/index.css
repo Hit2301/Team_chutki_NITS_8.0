@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌌 Crystal Effect Styles */
+body {
+  @apply bg-black text-white;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), transparent 50%),
+              radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.05), transparent 50%);
+  background-color: #000;
+}
+
+/* Inputs and buttons smooth effect */
+input, button {
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+/* Glass / crystal panels */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+}

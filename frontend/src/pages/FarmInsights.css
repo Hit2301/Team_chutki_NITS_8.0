@@ -1,0 +1,319 @@
+.insights-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 15px;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #f0f0f0;
+}
+
+.insights-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #90ee90; /* light green for title */
+}
+
+.farm-info {
+  background: rgba(0, 0, 0, 0.4); /* transparent dark card */
+  border: 1px solid #3a5a40;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.farm-info h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #b7f7c2;
+}
+
+.farm-info p {
+  margin: 5px 0;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.farm-map {
+  margin: 20px 0;
+  border: 2px solid #2d6a4f;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.insights-section {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.3); /* glassy */
+  border: 1px solid #2d6a4f;
+}
+
+.insights-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #90ee90;
+}
+
+.insights-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.insights-section li {
+  padding: 8px 10px;
+  border-bottom: 1px solid #444;
+  font-size: 0.95rem;
+  color: #eee;
+}
+
+.insights-section li:last-child {
+  border-bottom: none;
+}
+
+.back-btn {
+  margin-top: 20px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #2d6a4f;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #1b4332;
+  transform: scale(1.05);
+}
+.leaflet-interactive {
+  stroke: #66bb6a !important;       /* border */
+  fill: #a5d6a7 !important;         /* inside color */
+  fill-opacity: 0.25 !important;    /* transparency */
+}
+src/pages/FarmInsights.css
+
+.insights-container {
+  padding: 20px;
+  background: linear-gradient(180deg,#0b1220,#071021);
+  color: #e6eef8;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* header area */
+.insights-container h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #cfeefe;
+}
+
+.farm-info {
+  margin-bottom: 12px;
+}
+.farm-title h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #eafff6;
+}
+.farm-meta {
+  margin-top: 6px;
+  color: #9fb4c6;
+  font-size: 13px;
+}
+
+/* map card */
+.farm-map {
+  margin-top: 16px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* analytics / cards */
+.insights-section {
+  margin-top: 16px;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.03);
+  color: #dbefff;
+}
+
+.insights-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #e7fbfb;
+}
+
+.indicators {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.indicator {
+  background: rgba(255,255,255,0.02);
+  padding: 8px 12px;
+  border-radius: 8px;
+  min-width: 120px;
+  text-align: left;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+.indicator .label {
+  color: #a7c4cf;
+  font-size: 12px;
+}
+.indicator .value {
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 6px;
+  color: #e6fbff;
+}
+
+/* recommendations */
+.recommendations ul {
+  margin: 8px 0 0 18px;
+  color: #cfe9e9;
+}
+.recommendations li { margin-bottom: 6px; }
+
+/* back button */
+.back-btn {
+  margin-top: 14px;
+  background: transparent;
+  color: #bfeffd;
+  border: 1px solid rgba(190,255,253,0.12);
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.back-btn:hover {
+  background: rgba(190,255,253,0.04);
+}
+
+/* leaflet tooltip tweak (dark tiny card) */
+.leaflet-tooltip {
+  background: rgba(13,17,23,0.95) !important;
+  color: #f3f9ff !important;
+  border-radius: 6px !important;
+  padding: 6px 8px !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+
+/* ---- AI Prediction Section ---- */
+.ai-section {
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.ai-section h3 {
+  color: #d1f7d1;
+  font-size: 18px;
+}
+
+.ai-section .ai-summary {
+  margin-top: 10px;
+  color: #eafcf5;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Color states */
+.ai-healthy {
+  border-left-color: #22c55e;
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.ai-moderate {
+  border-left-color: #eab308;
+  background: rgba(234, 179, 8, 0.08);
+}
+
+.ai-stressed {
+  border-left-color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+}
+
+
+/* .ai-section {
+  border: 2px dashed red !important;
+} */
+
+
+/* =============================
+   🤖 AI Crop Health Prediction
+   ============================= */
+.ai-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.ai-section h3 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+/* Status-specific colors */
+.ai-healthy {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.ai-moderate {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.ai-stressed {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+/* Indicators inside AI card */
+.ai-section .indicators {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.ai-section .indicator {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.ai-section .indicator .label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.ai-section .indicator .value {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 0.25rem;
+}
+
+/* Small summary paragraph below indicators */
+.ai-summary {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.4rem;
+}
+
+/* Slight hover effect for visual depth */
+.ai-section:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
