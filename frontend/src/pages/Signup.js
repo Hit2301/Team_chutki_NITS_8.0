@@ -14,9 +14,17 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [photo, setPhoto] = useState(null);
+
+  // ⬇ added loading states
+  const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
+
   const navigate = useNavigate();
 
   const handleSignup = async () => {
+    if (loading) return; // stop double clicks
+    setLoading(true);
+
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -36,18 +44,23 @@ export default function Signup() {
         photoURL,
       });
 
-      navigate("/home"); // ✅ redirect after signup
+      navigate("/home");
     } catch (err) {
       alert("⚠️ " + err.message);
+      setLoading(false); // enable button again if error
     }
   };
 
   const handleGoogleSignup = async () => {
+    if (googleLoading) return; // stop double clicks
+    setGoogleLoading(true);
+
     try {
       await signInWithPopup(auth, googleProvider);
       navigate("/home");
     } catch (err) {
       alert("⚠️ " + err.message);
+      setGoogleLoading(false);
     }
   };
 
@@ -55,39 +68,56 @@ export default function Signup() {
     <div className="auth-bg">
       <div className="login-card">
         <h1>Sign Up</h1>
+
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
+
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+
         <input
           type="file"
           onChange={(e) => setPhoto(e.target.files[0])}
           accept="image/*"
         />
-        <button className="login-button" onClick={handleSignup}>
-          Sign Up
+
+        {/* SIGN UP BUTTON */}
+        <button
+          className="login-button"
+          onClick={handleSignup}
+          disabled={loading}
+        >
+          {loading ? "Signing up..." : "Sign Up"}
         </button>
-        <button className="google-button" onClick={handleGoogleSignup}>
+
+        {/* GOOGLE SIGNUP BUTTON */}
+        <button
+          className="google-button"
+          onClick={handleGoogleSignup}
+          disabled={googleLoading}
+        >
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png"
             alt="Google"
           />
-          Sign Up with Google
+          {googleLoading ? "Please wait..." : "Sign Up with Google"}
         </button>
+
         <p className="signup-text">
           Already have an account?{" "}
           <Link to="/login" className="signup-link">
