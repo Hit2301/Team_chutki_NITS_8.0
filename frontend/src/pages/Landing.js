@@ -57,16 +57,6 @@ export default function Landing() {
             <div className="satellite-holder">
               <img src={satelliteImg} className="simple-satellite" alt="Satellite" />
             </div>
-
-            {/* Scan line */}
-            <div className="simple-scan-line"></div>
-            {/* <div className="helix">
-              {Array(15).fill(0).map((_, i) => (
-                <div className="helix-dot" style={{ "--i": i }}></div>
-              ))}
-            </div> */}
-
-
           </div>
 
         </div>
