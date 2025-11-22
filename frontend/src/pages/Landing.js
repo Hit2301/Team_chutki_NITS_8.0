@@ -2,6 +2,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Landing.css';
+import earthImg from "./earth.png";
+import satelliteImg from "./satellite.png";
+
+
 
 export default function Landing() {
   return (
@@ -26,12 +30,12 @@ export default function Landing() {
             <span className="highlight"> Crop Monitoring</span>
           </h1>
           <p className="hero-subtitle">
-            Monitor your farm's health, track growth patterns, and optimize yields 
+            Monitor your farm's health, track growth patterns, and optimize yields
             with real-time satellite imagery and AI-powered insights.
           </p>
           <div className="hero-actions">
             <Link to="/signup" className="btn btn-primary">
-              Get Started 
+              Get Started
             </Link>
             <Link to="/login" className="btn btn-secondary">
               Existing User
@@ -39,12 +43,35 @@ export default function Landing() {
           </div>
         </div>
         <div className="hero-visual">
-          <div className="dashboard-preview">
-            <div className="preview-card"></div>
-            <div className="preview-card"></div>
-            <div className="preview-card"></div>
+          <div className="simple-earth-container">
+
+            <img src={earthImg} className="simple-earth" alt="Earth" />
+            <div className="ring-container">
+              {Array(14).fill(0).map((_, i) => (
+                <div className="scan-ring" style={{ "--i": i }}></div>
+              ))}
+            </div>
+
+
+            {/* Satellite (attached to beam) */}
+            <div className="satellite-holder">
+              <img src={satelliteImg} className="simple-satellite" alt="Satellite" />
+            </div>
+
+            {/* Scan line */}
+            <div className="simple-scan-line"></div>
+            {/* <div className="helix">
+              {Array(15).fill(0).map((_, i) => (
+                <div className="helix-dot" style={{ "--i": i }}></div>
+              ))}
+            </div> */}
+
+
           </div>
+
         </div>
+
+
       </section>
 
       {/* Features Section */}
